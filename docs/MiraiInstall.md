@@ -1,19 +1,19 @@
 # 安装mirai-console-loader
 
-## 下载
+### 下载mlc
 点击这里下载 [MCL Installer 1.0.4](https://github.com/iTXTech/mcl-installer/releases/tag/v1.0.4)
 
-## 安装mcl
+### 安装mcl
 打开下载好的安装文件，然后一直回车就行，如果是32位系统就在Binary Architecture处输入x32
 
 ![image](https://user-images.githubusercontent.com/89188316/161088266-461de87d-0e75-414b-aca3-fa3b7eb97e85.png)
 
-## 运行mcl
+### 运行mcl
 打开mcl.cmd，等待插件更新完毕后关闭控制台
 
 ![image](https://user-images.githubusercontent.com/89188316/161089016-81ea8a98-1f74-4f11-96d8-679c5a613868.png)
 
-## 安装mirai-api-http插件
+### 安装mirai-api-http插件
 在mcl安装目录空白处按住shift然后点击右键，在此处打开Powershell窗口，然后执行命令
 
 ```shell
@@ -62,11 +62,11 @@ adapterSettings:
     reservedSyncId: -1
 ```
 
-## 设置bot账号密码
+### 设置bot账号密码
 - 修改mcl安装目录下，config/Console目录中的AutoLogin.yml文件
 ![image](https://user-images.githubusercontent.com/89188316/161096535-77340b3a-862b-426b-9c26-53c26f92832d.png)
 
-## 验证并登录mcl
+### 验证并登录mcl
 - 下载[滑动验证助手](https://github.com/mzdluo123/TxCaptchaHelper/releases)并安装到手机中
 
 - 重新打开mcl.cmd，出现如下弹窗，点击Open with TxCaptchaHelper
@@ -76,7 +76,7 @@ adapterSettings:
 - ![image](https://user-images.githubusercontent.com/89188316/161178513-bf58f2a1-3c03-4f5b-aa0e-6c4c79119b96.png)
 - ![image](https://user-images.githubusercontent.com/89188316/161178979-0655d719-36f1-46a7-93d2-ba9fbff51306.png)
 
-## 设备授权
+### 设备授权
 - 将URL复制出来私聊发送给bot，然后用手机登录bot后点开这个URL
 - ![image](https://user-images.githubusercontent.com/89188316/161181132-b4c76afa-637a-4f27-9b2c-2a4c90226209.png)
 - 点QQ扫码验证
@@ -86,12 +86,12 @@ adapterSettings:
 - 然后允许登录
 - ![image](https://user-images.githubusercontent.com/89188316/161180461-2a273c16-425b-46e6-8f97-52260ff30543.png)
 
-## 最后
+### 最后
 - 关闭刚才需要复制url的弹窗，可以看到bot登录成功了
 - ![image](https://user-images.githubusercontent.com/89188316/161180912-388225c4-a67c-4722-95bc-0fc8902e6d50.png)
 - 如果不是安卓手机或者登录失败，请参考[无法登录的临时处理方案](https://mirai.mamoe.net/topic/223/%E6%97%A0%E6%B3%95%E7%99%BB%E5%BD%95%E7%9A%84%E4%B8%B4%E6%97%B6%E5%A4%84%E7%90%86%E6%96%B9%E6%A1%88)
 
-## 修改配置文件中bot账号
+### 修改配置文件中bot账号
 - 推荐安装一个NodePad++编辑器
 - 用NodePad++打开appsettings.Production.json
 - 将配置文件中botQQ的值(这里是123456789)，改为mcl中登录的QQ号码，然后保存

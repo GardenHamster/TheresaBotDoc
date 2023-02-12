@@ -1,8 +1,8 @@
 ## 安装数据库
-数据库为mysql，需要自行安装，或者可以购买云数据库，推荐安装 [v8.0.31](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.31.0.msi) 及以上，[点击查看新手教程](MysqlInstall.md)
+数据库为mysql，需要自行安装，或者可以购买云数据库，推荐安装 [v8.0.31](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.31.0.msi) 及以上，[点击查看新手教程](mysqlInstall.md)
 
 ## 安装mcl
-参照 [mirai-console-loader](https://github.com/iTXTech/mirai-console-loader) 文档安装mcl，并为其配置 [mirai-api-http](https://github.com/project-mirai/mirai-api-http) 插件，然后为mcl配置bot账号密码，[点击查看新手教程](MiraiInstall.md)
+参照 [mirai-console-loader](https://github.com/iTXTech/mirai-console-loader) 文档安装mcl，并为其配置 [mirai-api-http](https://github.com/project-mirai/mirai-api-http) 插件，然后为mcl配置bot账号密码，[点击查看新手教程](miraiInstall.md)
 
 ## 启动mcl
 运行 `mcl.cmd` 启动mcl控制台，正常启动结果如下
@@ -161,3 +161,8 @@ pc端打开[https://saucenao.com](https://saucenao.com)，点击右下角的Acco
 3. 如果botsettings.yml有更新，则需要修改该文件到最新版本
 
 4. 重启插件
+
+## 其他
+
+### pixiv图片代理
+如果在qq中打开原图连接时出现感叹号，或者打不开原图链接时，[可以参考这里配置一个自己的图片代理](imgProxy.md)，然后修改相关配置

@@ -1,13 +1,11 @@
 # cloudflare免费搭建p站图片代理
 
-## pixiv图片反向代理
-- 如果在qq中打开原图连接时出现感叹号，或者打不开原图链接时，[可以参考这里配置一个自己的反向代理域名](https://github.com/GardenHamster/Theresa3rd-Bot/blob/main/pixivproxy.md)，然后修改相关配置
-
 ### 购买域名
 * 首先准备一个自己的域名，如果没有的话可以去阿里云购买一个.top之类的比较便宜的域名，https://wanwang.aliyun.com/domain/searchresult
 
 ### 注册cloudflare
 * 注册然后登录https://dash.cloudflare.com
+
 * 然后在右上角将 English (US) 切换到 简体中文
 
 ### 创建网站
@@ -78,8 +76,11 @@ addEventListener('fetch', event => {
 
 ### 测试
 * 这是pixiv上的一条原图链接https://i.pximg.net/img-original/img/2019/03/06/00/40/39/73532572_p0.jpg
+
 * 使用刚才配置的代理域名替换掉i.pximg.net得到链接https://pixiv.gardencavy.site/img-original/img/2019/03/06/00/40/39/73532572_p0.jpg
+
 * 关掉梯子然后打开链接测试图片是否能正常打开，并且发送到手机后再测试一下，如果不行就等一段时间后再测试，生效需要一段时间，可能需要几个小时
+
 ![image](https://user-images.githubusercontent.com/89188316/197010554-f110f621-a20e-4955-a439-370efacc8edc.png)
 
 
