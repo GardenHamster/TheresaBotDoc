@@ -53,24 +53,26 @@ sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-
 sudo yum install aspnetcore-runtime-6.0
 ```
 
-3. 切换到Theresa3rd-Bot.dll所在目录下，运行Theresa3rd-Bot.dll
-
-```bash
-nohup dotnet Theresa3rd-Bot.dll --launch-profile Production --urls http://0.0.0.0:8088
-```
-
-4. 升级ca证书
+3. 升级ca证书
 
 ```bash
 yum update ca-certificates -y
 ```
 
+4. 切换到TheresaBot.MiraiHttpApi.dll所在目录下，运行TheresaBot.MiraiHttpApi.dll，这里的端口可以随意填，但是不要填mcl的端口
+
+```bash
+nohup dotnet TheresaBot.MiraiHttpApi.dll --launch-profile Production --urls http://0.0.0.0:8088
+```
+
+
+
 ## Windows下部署
 1. 下载并安装 [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)，推荐下载页面中的 [Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.8-windows-hosting-bundle-installer)
 
-2. 启动 powershell 并将路径切换到Theresa3rd-Bot.dll所在目录下
+2. 启动 powershell 并将路径切换到TheresaBot.MiraiHttpApi.dll所在目录下
 
-3. 运行Theresa3rd-Bot.dll，这里的端口可以随意填，但是不要填mcl的端口
+3. 运行TheresaBot.MiraiHttpApi.dll，这里的端口可以随意填，但是不要填mcl的端口
 
 ```bash
 dotnet TheresaBot.MiraiHttpApi.dll --launch-profile Production --urls http://0.0.0.0:8088
