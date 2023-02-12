@@ -8,8 +8,8 @@
 
 -   (封面 PID:[73532572](https://www.pixiv.net/artworks/73532572))
 
-[开始使用](install)
+[开始使用](general)
 
-![](/img/73532572_p0.jpg)
+![](/73532572_p0.jpg)
 
 ![color](#f0f0f0)
