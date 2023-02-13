@@ -30,7 +30,11 @@ Data Source=127.0.0.1;port=3306;Initial Catalog=theresa_bot;uid=root;pwd=123456;
 ```
 
 ### yml语法错误
-- 遇到类似 `YamlDotNet.Core.YamlException` 情况需要重新检查 `botsetting.yml` 文件
+*  遇到类似 `YamlDotNet.Core.YamlException` 情况需要重新检查 `botsetting.yml` 文件
+  
+*  对比源文件，检查文件中的键值是否被误改，或者设置了错误的值，或者值超出了上限等
+  
+*  如果属性值为空时需要保留一对单引号，不能直接删除
 
 ```bash
 Unhandled exception. YamlDotNet.Core.YamlException: (Line: 18, Col: 30, Idx: 1361) - (Line: 18, Col: 49, Idx: 1380): Exception during deserialization
@@ -55,14 +59,16 @@ The remote certificate is invalid because of errors in the certificate chain: No
 yum update ca-certificates -y
 ```
 
-### bot没有回复或者只回复表情
-**只有#pixivcookie等更新cookie的指令需要私发给机器人以外，其他指令都要发送到群里面**
+### bot没有回复
+* 检查配置文件中AcceptGroups中的群号有没有填写错误
 
-**有可能是你发送的不是一个指令，或者这个指令不存在，或者发送的指令前缀不一致，或者你修改了配置文件以后没有重启**
+* mcl控制台中有消息回应，但是群里没有消息出来，有可能是被风控了，建议换一个账号尝试
 
-私聊bot但是只会回复表情的情况：
-- 需要加bot为好友
+### bot只回复表情
+* 只有#pixivcookie等更新cookie的指令需要私发给机器人以外，其他指令都要发送到群里面
 
-群聊bot但是没有回应的情况
-- 配置文件中AcceptGroups没有配置群号，或者群号填写错误
-- mcl中机器人有回应但是群里没有消息出来，那可能是你的bot账号是刚注册没多久的，或者内容太色了mht不让你发
+* 有可能是你发送的指令不存在，或者使用了错误的指令前缀
+
+* 修改了配置文件以后没有重启
+
+
