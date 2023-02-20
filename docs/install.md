@@ -1,5 +1,5 @@
 ## 安装数据库
-数据库为mysql，需要自行安装，或者可以购买云数据库，推荐安装 [v8.0.31](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.31.0.msi) 及以上，[点击查看新手教程](mysqlInstall.md)
+数据库为mysql，需要自行安装，推荐安装 [v8.0.31](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.31.0.msi) 及以上，[点击查看新手教程](mysqlInstall.md)
 
 ## 安装mcl
 参照 [mirai-console-loader](https://github.com/iTXTech/mirai-console-loader) 文档安装mcl，并为其配置 [mirai-api-http](https://github.com/project-mirai/mirai-api-http) 插件，然后为mcl配置bot账号密码，[点击查看新手教程](miraiInstall.md)
@@ -20,7 +20,7 @@
 从 [releases](https://github.com/GardenHamster/Theresa3rd-Bot/releases) 中下载最新版本的压缩包，然后解压到某个英文路径下，并不需要放到mcl目录下
 
 ## 连接mcl
-修改根目录下的配置文件appsettings.Production.json，使项目可以连接上mcl
+修改根目录下的配置文件appsettings.Production.json，使本插件可以连接上mcl
 ```json
 {
   "Mirai": {                        //mirai-api-http配置在mcl目录config/net.mamoe.mirai-api-http/setting.yml里面
@@ -36,7 +36,7 @@
 ```
 
 ## 修改配置
-根据自己的需要修改根目录下的配置文件`botsettings.yml`，修改完成后需要重新启动，配置说明[点击这里](https://github.com/GardenHamster/Theresa3rd-Bot/blob/main/botsetting.md)
+根据自己的需要修改根目录下的配置文件`botsettings.yml`，修改完成后需要重新启动，配置说明[点击这里](setting.md)
 
 !> 注：各版本之间的`botsettings.yml`可能会有较大差异，升级版本后请注意对比并修改该文件
 
