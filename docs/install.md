@@ -17,7 +17,7 @@
 ```
 
 ## 下载插件
-从 [releases](https://github.com/GardenHamster/Theresa3rd-Bot/releases) 中下载最新版本的压缩包，然后解压到某个英文路径下，并不需要放到mcl目录下
+从 [releases](https://github.com/GardenHamster/Theresa3rd-Bot/releases) 中下载最新版本的`Theresa3rd-Bot.zip`压缩包，然后解压到某个英文路径下，并不需要放到mcl目录下
 
 ## 连接mcl
 修改根目录下的配置文件appsettings.Production.json，使本插件可以连接上mcl
