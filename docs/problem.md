@@ -1,3 +1,7 @@
+### 指令没有回复
+* 
+
+
 ### 数据库自动建表失败
 ```bash
 SqlSugar.SqlSugarException: 中文提示 :  连接数据库过程中发生错误，检查服务器是否正常连接字符串是否正确，实在找不到原因请先Google错误信息：The given key '0' was not present in the dictionary..

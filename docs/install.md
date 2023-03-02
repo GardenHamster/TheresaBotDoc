@@ -1,3 +1,5 @@
+?> 注：本插件依赖于 [Mirai](https://github.com/mamoe/mirai) 平台运行，所以你必须同时运行`mcl.cmd`和`TheresaBot.MiraiHttpApi.dll`才能正常使用本插件
+
 ## 安装数据库
 数据库为mysql，需要自行安装，推荐安装 [v8.0.31](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.31.0.msi) 及以上，[点击查看新手教程](mysqlInstall.md)
 
@@ -126,29 +128,12 @@ info: Microsoft.Hosting.Lifetime[0]
 
 最后在你运行这个插件的机器上登录 [pixiv](https://www.pixiv.net)，确保机器可以正常访问P站
 
-## 配置 pixiv cookie
-pc端登录P站后按下`F12`，然后在P站中随意搜索一个标签，在网络中找到如下请求。
+## 配置 cookie
+- 如果想要正常使用pixiv相关功能，你需要为插件配置PixivCookie
 
-这里以搜索Hololive为例，获取的cookie中必须包含PHPSESSID。
+- 参考 [cookie指令](cookie.md?id=pixiv-cookie) 配置pixiv cookie (主要)
 
-然后使用 #pixivcookie [获取到的cookie] 格式私聊发送给机器人，和机器人必须为好友
-
-![image](/img/install/177747559-168c1377-db4a-49f0-869f-78749f80707e.png)
-
-![image](/img/install/177748449-02f59d79-a0bc-4475-80f6-40f0c56e06a6.png)
-
-## 配置 saucenao cookie
-在未设置cookie的情况下，Saucenao搜索限制为每个ip每日搜索50次，每30秒搜索3次，在使用频率较高的情况下，建议设置cookie
-
-pc端打开[https://saucenao.com](https://saucenao.com)，点击右下角的Account然后登录saucenao
-
-按下F12，然后在控制台/Console中输入`document.cookie`
-
-然后使用 #saucenaocookie [获取到的cookie] 格式私聊发送给机器人，与机器人必须为好友
-
-![image](/img/install/177758500-94720035-c11a-4689-bb91-eca1ac95ce7e.png)
-
-![image](/img/install/177758915-69de1308-d934-407f-a945-17252124c969.png)
+- 参考 [cookie指令](cookie.md?id=saucenao-cookie) 配置saucenao cookie (次要)
 
 ## 更新版本的步骤
 
@@ -164,7 +149,9 @@ pc端打开[https://saucenao.com](https://saucenao.com)，点击右下角的Acco
 
 4. 重启插件
 
-## 其他
+## pixiv图片代理
+* 配置文件中的默认代理`https://i.pixiv.re`被tx标记为危险链接，推荐你修改为其他代理降低风控的风险
 
-### pixiv图片代理
-如果在qq中打开原图连接时出现感叹号，或者打不开原图链接时，[可以参考这里配置一个自己的图片代理](imgProxy.md)，然后修改相关配置
+* 如果Bot发送的图片链接出现感叹号，或者打不开原图链接时，[可以参考这里配置一个自己的图片代理](imgProxy.md)
+
+![image](/img/install/2023-03-02-18-58-03-758.jpg)
