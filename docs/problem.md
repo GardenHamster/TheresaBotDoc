@@ -105,4 +105,4 @@ System.ArgumentException: 调用http-api失败, 参数错误, 请到 https://git
    at TheresaBot.MiraiHttpApi.Session.MiraiSession.SendGroupSetuAsync(List`1 setuContents, Int64 groupId, Boolean sendMerge) in D:\project\Theresa3rd-Bot\Theresa3rd-Bot\TheresaBot.MiraiHttpApi\Session\MiraiSession.cs:line 118
    at TheresaBot.Main.Handler.PixivRankingHandler.replyRankingInfo(GroupCommand command, PixivRankingMode rankingMode, PixivRankingItem rankingItem) in D:\project\Theresa3rd-Bot\Theresa3rd-Bot\TheresaBot.Main\Handler\PixivRankingHandler.cs:line 196
 ```
-- 出现这个异常请暂时将mirai-http-api.jar版本回退到`v2.6.2`
+- 出现这个异常需要将mirai-http-api.jar版本升级到`v2.9.1`及以上
