@@ -1,8 +1,38 @@
-### 指令没有回复
-* 
+### 发送指令没有回应
 
+* 优先检查`mcl`和`本插件`是否正常运行，检查命令行或者`Log目录`下是否有报错信息
 
-### 数据库自动建表失败
+* 检查配置`Permissions.AcceptGroups`中的群号有没有填写错误
+
+* 检查修改配置文件后有没有重启本插件
+
+* 检查有没有使用正确的前缀，例如`General.Prefix`中设置的是`#`号，那么对应的菜单指令为`#菜单`
+
+* 检查指令是否发送到群里，而不是私聊机器人(大部分指令都是群聊指令)
+
+* 查看mcl控制台中是否有回应消息，如果有代表可能被风控了，建议换一个账号重试
+
+* 检查机器人是否在群里，是否被禁言
+
+### 连接到mcl失败
+```powershell
+连接到mirai-console失败
+System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 (127.0.0.1:8100)
+ ---> System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.ConnectToTcpHostAsync(String host, Int32 port, HttpRequestMessage initialRequest, Boolean async, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+```
+
+- 检查mirai-http-api配置是否正确，[配置方法参考这里](miraiInstall?id=安装mirai-api-http插件)
+
+- 检查mcl是否正常启动
+
+- 检查bot账号是否正常登录
+
+### 数据库连接失败
 ```bash
 SqlSugar.SqlSugarException: 中文提示 :  连接数据库过程中发生错误，检查服务器是否正常连接字符串是否正确，实在找不到原因请先Google错误信息：The given key '0' was not present in the dictionary..
 English Message : Connection open error . The given key '0' was not present in the dictionary.
@@ -32,6 +62,8 @@ System.Collections.Generic.KeyNotFoundException: The given key '25185' was not p
 ```bash
 Data Source=127.0.0.1;port=3306;Initial Catalog=theresa_bot;uid=root;pwd=123456;CharSet=utf8mb4;SslMode=None;
 ```
+
+- 如果不是这个问题，百度一下关键的错误信息一般都能解决
 
 ### yml语法错误
 *  遇到类似 `YamlDotNet.Core.YamlException` 情况需要重新检查 `botsetting.yml` 文件
@@ -63,14 +95,14 @@ The remote certificate is invalid because of errors in the certificate chain: No
 yum update ca-certificates -y
 ```
 
-### bot没有回复
-* 检查配置文件中AcceptGroups中的群号有没有填写错误
-
-* mcl控制台中有消息回应，但是群里没有消息出来，有可能是被风控了，建议换一个账号尝试
-
-### bot只回复表情
-* 只有#pixivcookie等更新cookie的指令需要私发给机器人以外，其他指令都要发送到群里面
-
-* 有可能是你发送的指令不存在，或者使用了错误的指令前缀
-
-* 修改了配置文件以后没有重启
+### 日榜发送异常
+```powershell
+replyRankingInfo异常
+System.ArgumentException: 调用http-api失败, 参数错误, 请到 https://github.com/Executor-Cheng/Mirai-CSharp/issues 下提交issue。
+   at Mirai.CSharp.HttpApi.Extensions.ApiResponseExtensions.EnsureApiRespCode(JsonElement root)
+   at Mirai.CSharp.HttpApi.Session.MiraiHttpSession.CommonSendMessageAsync(String action, Nullable`1 qqNumber, Nullable`1 groupNumber, IChatMessage[] chain, Nullable`1 quoteMsgId, CancellationToken token)
+   at TheresaBot.MiraiHttpApi.Session.MiraiSession.SendGroupMergeMessageAsync(Int64 groupId, List`1 setuContents) in D:\project\Theresa3rd-Bot\Theresa3rd-Bot\TheresaBot.MiraiHttpApi\Session\MiraiSession.cs:line 93
+   at TheresaBot.MiraiHttpApi.Session.MiraiSession.SendGroupSetuAsync(List`1 setuContents, Int64 groupId, Boolean sendMerge) in D:\project\Theresa3rd-Bot\Theresa3rd-Bot\TheresaBot.MiraiHttpApi\Session\MiraiSession.cs:line 118
+   at TheresaBot.Main.Handler.PixivRankingHandler.replyRankingInfo(GroupCommand command, PixivRankingMode rankingMode, PixivRankingItem rankingItem) in D:\project\Theresa3rd-Bot\Theresa3rd-Bot\TheresaBot.Main\Handler\PixivRankingHandler.cs:line 196
+```
+- 出现这个异常请暂时将mirai-http-api.jar版本回退到`v2.6.2`

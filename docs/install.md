@@ -1,4 +1,4 @@
-?> 注：本插件依赖于 [Mirai](https://github.com/mamoe/mirai) 平台运行，所以你必须同时运行`mcl.cmd`和`TheresaBot.MiraiHttpApi.dll`才能正常使用本插件
+!> 注：本插件依赖于 [Mirai](https://github.com/mamoe/mirai) 平台运行，所以你必须同时运行`mcl.cmd`和`TheresaBot.MiraiHttpApi.dll`才能正常使用本插件
 
 ## 安装数据库
 数据库为mysql，需要自行安装，推荐安装 [v8.0.31](https://dev.mysql.com/get/Downloads/MySQLInstaller/mysql-installer-community-8.0.31.0.msi) 及以上，[点击查看新手教程](mysqlInstall.md)
@@ -43,7 +43,7 @@
 !> 注：各版本之间的`botsettings.yml`可能会有较大差异，升级版本后请注意对比并修改该文件
 
 ## Linux下部署
-1. 签名密钥并添加 Microsoft 包存储库
+1. 签名密钥并添加Microsoft包存储库
 
 ```bash
 sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
@@ -61,7 +61,13 @@ sudo yum install aspnetcore-runtime-6.0
 yum update ca-certificates -y
 ```
 
-4. 切换到TheresaBot.MiraiHttpApi.dll所在目录下，运行TheresaBot.MiraiHttpApi.dll，这里的端口可以随意填，但是不要填mcl的端口
+4. 切换到`TheresaBot.MiraiHttpApi.dll`所在目录下
+
+```bash
+cd TheresaBot.MiraiHttpApi.dll所在目录
+```
+
+5. 后台运行dll，这里的端口可以随意填，但是不要填mcl的端口
 
 ```bash
 nohup dotnet TheresaBot.MiraiHttpApi.dll --launch-profile Production --urls http://0.0.0.0:8088
@@ -72,24 +78,24 @@ nohup dotnet TheresaBot.MiraiHttpApi.dll --launch-profile Production --urls http
 ## Windows下部署
 1. 下载并安装 [ASP.NET Core Runtime 6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)，推荐下载页面中的 [Hosting Bundle](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-aspnetcore-6.0.8-windows-hosting-bundle-installer)
 
-2. 启动 powershell 并将路径切换到TheresaBot.MiraiHttpApi.dll所在目录下
+2. 启动 powershell 并将路径切换到`TheresaBot.MiraiHttpApi.dll`所在目录下
 
-3. 运行TheresaBot.MiraiHttpApi.dll，这里的端口可以随意填，但是不要填mcl的端口
+3. 运行`TheresaBot.MiraiHttpApi.dll`，这里的端口可以随意填，但是不要填mcl的端口
 
-```bash
+```powershell
 dotnet TheresaBot.MiraiHttpApi.dll --launch-profile Production --urls http://0.0.0.0:8088
 ```
 
-4. 可以在桌面创建一个 powershell.ps1 脚本方便一键启动
+4. 可以在桌面创建一个 powershell 脚本`Theresa3rdBot.ps1`方便一键启动
 
-```bash
+```powershell
 $host.ui.RawUI.WindowTitle="Theresa3rd-Bot"
-cd C:\Theresa3rd-Bot
+cd C:\Theresa3rd-Bot                        #这里修改为你的解压目录
 dotnet TheresaBot.MiraiHttpApi.dll --launch-profile Production --urls http://0.0.0.0:8088
 ```
 
 ### 正常运行结果如下
-```bash
+```powershell
 2023-02-12 03:13:31,548 INFO  ConsoleLog - 日志配置完毕...
 2023-02-12 03:13:31,725 INFO  ConsoleLog - 配置文件读取完毕...
 2023-02-12 03:13:31,742 INFO  ConsoleLog - 尝试连接到mirai-console...
@@ -120,7 +126,7 @@ info: Microsoft.Hosting.Lifetime[0]
 
 
 ## 开启VPN
-需要一个可以访问外网的环境，本人使用的是[自由鲸](https://www.freewhale.us/auth/register?code=sQAT)(原心阶)，邀请码为sQAT
+Pixiv需要一个可以访问外网的环境，本人使用的是[自由鲸](https://www.freewhale.us/auth/register?code=sQAT)(原心阶)，邀请码为sQAT
 
 从0.4.0版本开始加入了免代理，通过修改SNI的方式访问pixiv，然后通过pixiv.re代理下载图片。
 
@@ -150,8 +156,8 @@ info: Microsoft.Hosting.Lifetime[0]
 4. 重启插件
 
 ## pixiv图片代理
-* 配置文件中的默认代理`https://i.pixiv.re`被tx标记为危险链接，推荐你修改为其他代理降低风控的风险
+* 配置文件中的默认代理`https://i.pixiv.re`被tx标记为危险链接，推荐你修改配置`Pixiv.OriginUrlProxy`到其他代理降低触发风控的风险
 
-* 如果Bot发送的图片链接出现感叹号，或者打不开原图链接时，[可以参考这里配置一个自己的图片代理](imgProxy.md)
+* [或者可以参考这里配置一个自己的图片代理](imgProxy.md)
 
 ![image](/img/install/2023-03-02-18-58-03-758.jpg)
