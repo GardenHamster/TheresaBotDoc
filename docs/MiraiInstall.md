@@ -1,9 +1,9 @@
 # 安装MCL
 
-?> mirai 的相关问题，请自行到 [mirai issues](https://github.com/mamoe/mirai/issues) 中查找解决办法，这里只演示Windows下基本的安装流程，并不帮忙解决相关问题
+?> mirai 的相关问题，请自行到 [mirai issues](https://github.com/mamoe/mirai/issues) 或者 [mirai社区](https://mirai.mamoe.net) 中查找解决办法，这里只演示Windows下基本的安装流程，并不帮忙解决相关问题
 
 ### 安装JDK17
-确保你已经安装好JDK17或者更高的版本，并且已经配置好了环境变量，具体安装方法请自行百度
+确保你已经安装好JDK17或者更高的版本，并且已经配置好了[环境变量](https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=jdk%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE)，具体安装方法请自行百度
 
 ![image](/img/mirai/20230214183859.jpg)
 
@@ -101,7 +101,6 @@ adapterSettings:
 
 接下来需要验证码，先输入yes，然后再输入手机接收到的验证码，回车提交，最后看到`Bot login successful` 表示登陆成功了
 ![image](/img/mirai/20230214231901.jpg)
-
 
 
 ### 修改配置文件中bot账号
