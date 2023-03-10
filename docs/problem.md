@@ -16,6 +16,21 @@
 
 ### 连接到mcl失败
 ```powershell
+启动异常
+System.AggregateException: One or more errors occurred. (The server returned status code '404' when status code '101' was expected.)
+ ---> System.Net.WebSockets.WebSocketException (0x80004005): The server returned status code '404' when status code '101' was expected.
+   at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, CancellationToken cancellationToken, ClientWebSocketOptions options)
+   at System.Net.WebSockets.ClientWebSocket.ConnectAsyncCore(Uri uri, CancellationToken cancellationToken)
+   at Mirai.CSharp.HttpApi.Session.MiraiHttpSession.StartReceiveMessageLoopAsync(MiraiHttpSessionOptions options, InternalSessionInfo session, CancellationToken connectToken, CancellationToken token)
+   at Mirai.CSharp.HttpApi.Session.MiraiHttpSession.ConnectAsync(Int64 qqNumber, Boolean listenCommand, CancellationToken token)
+   at TheresaBot.MiraiHttpApi.Helper.MiraiHelper.ConnectMirai()
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at Theresa3rd_Bot.Startup.ConfigureServices(IServiceCollection services)
+```
+```powershell
 连接到mirai-console失败
 System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法连接。 (127.0.0.1:8100)
  ---> System.Net.Sockets.SocketException (10061): 由于目标计算机积极拒绝，无法连接。
@@ -26,7 +41,7 @@ System.Net.Http.HttpRequestException: 由于目标计算机积极拒绝，无法
    --- End of inner exception stack trace ---
 ```
 
-- 检查mirai-http-api配置是否正确，[配置方法参考这里](miraiInstall?id=安装mirai-api-http插件)
+- 检查mirai-http-api配置是否正确，优先检查`verifyKey`和`port`，[配置方法参考这里](miraiInstall?id=安装mirai-api-http插件)
 
 - 检查mcl是否正常启动
 

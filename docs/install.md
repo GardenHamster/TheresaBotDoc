@@ -126,9 +126,11 @@ info: Microsoft.Hosting.Lifetime[0]
 
 
 ## 开启VPN
-Pixiv需要一个可以访问外网的环境，本人使用的是[自由鲸](https://www.freewhale.us/auth/register?code=sQAT)(原心阶)，邀请码为sQAT
+Pixiv需要一个可以访问外网的环境，你需要自行购买机场。建议`Clash`等代理客户端选择`Rule`代理模式，节点选择`JP`节点。
 
-从0.4.0版本开始加入了免代理，通过修改SNI的方式访问pixiv，然后通过pixiv.re代理下载图片。
+你也可以购买[自由鲸](https://www.freewhale.us/auth/register?code=sQAT)，邀请码为sQAT。需要邀请次数可以在群内艾特我，~~你购买套餐的同时我可以获得一部分返利~~
+
+从v0.4.0版本开始加入了免代理，通过修改SNI的方式访问pixiv，然后通过pixiv.re代理下载图片。
 
 你可以在`botsettings.yml`中开启该功能，但不建议在有梯子的情况下启用它。
 
